@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+third_party/
+videos/*
+!videos/.gitkeep
+tasks/*/results/
+*.mp4
+MUJOCO_LOG.TXT
+.DS_Store

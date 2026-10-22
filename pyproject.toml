@@ -1,0 +1,26 @@
+[project]
+name = "uniman"
+version = "0.1.0"
+description = "Teach a Unitree walking robot new tasks with Claude Code: video/spec -> MuJoCo sim -> real robot"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "mujoco>=3.2",
+    "numpy>=1.26",
+    "imageio[ffmpeg]>=2.34",
+]
+
+[project.optional-dependencies]
+# Real-robot SDK. Needs CycloneDDS; see https://github.com/unitreerobotics/unitree_sdk2_python
+real = ["unitree_sdk2py @ git+https://github.com/unitreerobotics/unitree_sdk2_python.git"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["uniman"]
